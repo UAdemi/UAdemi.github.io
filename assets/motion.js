@@ -1,29 +1,34 @@
-// Scroll reveals. Finite, one-way, and skipped entirely for reduced-motion users.
+// Scroll reveals + the hero diagram trigger.
+// Finite, one-way, and skipped entirely for reduced-motion users.
 (function () {
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var items = document.querySelectorAll('.reveal');
 
-  if (reduced || !('IntersectionObserver' in window)) {
+  function showAll() {
     for (var i = 0; i < items.length; i++) items[i].classList.add('is-in');
-    return;
   }
 
+  if (reduced || !('IntersectionObserver' in window)) { showAll(); return; }
+
+  // Sections reveal as they enter; the diagram waits until ~38% of it is visible.
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-in');
-        io.unobserve(entry.target); // reveal once, never re-trigger
-      }
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
     });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
 
-  items.forEach(function (el) { io.observe(el); });
+  var ioViz = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); ioViz.unobserve(e.target); }
+    });
+  }, { threshold: 0.38 });
 
-  // Give each SVG edge its own true length so the draw reads evenly.
+  items.forEach(function (el) {
+    (el.classList.contains('viz-band') ? ioViz : io).observe(el);
+  });
+
+  // Give each connector its true length so the draw reads evenly.
   document.querySelectorAll('.viz .edge').forEach(function (line) {
-    try {
-      var len = line.getTotalLength();
-      line.style.setProperty('--len', len.toFixed(1));
-    } catch (e) { /* non-fatal: falls back to the CSS default */ }
+    try { line.style.setProperty('--len', line.getTotalLength().toFixed(1)); } catch (e) {}
   });
 })();
