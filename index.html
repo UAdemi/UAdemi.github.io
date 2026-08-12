@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script>document.documentElement.className+=' js';</script>
+<script>document.documentElement.className+=' js';window.addEventListener('load',function(){setTimeout(function(){function sweep(){var n=document.querySelectorAll('.reveal:not(.is-in)');for(var i=0;i<n.length;i++){var r=n[i].getBoundingClientRect();if(r.top<window.innerHeight*0.95&&r.bottom>0)n[i].classList.add('is-in');}}if(!document.querySelectorAll('.reveal:not(.is-in)').length)return;sweep();window.addEventListener('scroll',sweep,{passive:true});window.addEventListener('resize',sweep,{passive:true});},2500);});</script>
 <title>Ubeydullah Ademi | Researcher, Applied Statistician &amp; Entrepreneur</title>
 <meta name="description" content="Political Science PhD candidate and applied statistician at Northwestern working on causal inference, complex systems, and entrepreneurial ventures.">
 <link rel="canonical" href="https://ubeydullahademi.com/">
@@ -64,11 +64,11 @@
   <div class="wrap">
     <div>
       <h1>Ubeydullah Ademi</h1>
-      <p class="lede">Thinking with data &middot; Building with evidence</p>
-      <p class="intro">I use data to understand complex systems, make better decisions, and build ideas into outcomes.</p>
+      <p class="lede">From uncertainty to informed action</p>
+      <p class="intro">I use data, causal reasoning, and structured experimentation to understand complex systems and make better decisions.</p>
       <div class="btn-row">
         <a class="btn" href="/work/">Explore my work</a>
-        <a class="btn ghost" href="/about/">About me</a>
+        <a class="btn ghost" href="mailto:ubeydullahademi2027@u.northwestern.edu?subject=Data%20project">Discuss a data project</a>
       </div>
     </div>
     <img class="hero-portrait" src="/assets/headshot.jpg" alt="Ubeydullah Ademi" width="675" height="900">
@@ -78,45 +78,47 @@
 <section class="viz-band reveal">
   <div class="wrap">
     <svg class="viz" viewBox="0 0 960 240" role="img"
-         aria-label="Scattered records settle into clusters, connections form between them, and a single path resolves left to right from records through relationships and structure to an outcome.">
-      <g class="edges">
-        <line class="edge c1"  x1="88"  y1="146" x2="120" y2="176"/>
-        <line class="edge c2"  x1="120" y1="176" x2="152" y2="132"/>
-        <line class="edge c3"  x1="152" y1="132" x2="88"  y2="146"/>
-        <line class="edge c4"  x1="326" y1="118" x2="358" y2="156"/>
-        <line class="edge c5"  x1="358" y1="156" x2="392" y2="112"/>
-        <line class="edge c6"  x1="392" y1="112" x2="356" y2="88"/>
-        <line class="edge c7"  x1="356" y1="88"  x2="326" y2="118"/>
-        <line class="edge c8"  x1="574" y1="96"  x2="606" y2="134"/>
-        <line class="edge c9"  x1="606" y1="134" x2="640" y2="88"/>
-        <line class="edge c10" x1="640" y1="88"  x2="604" y2="66"/>
-      </g>
+         aria-label="From a single question, several attempts set out with no clear destination — one loops back, one dead-ends, one oscillates. Each attempt leaves observations behind. Analysis connects the evidence that held up and the weaker attempts fade. One route then resolves, still slightly curved, to a decision.">
+      <!-- 1. uncertainty: attempts with no destination -->
+      <path class="try t1" d="M84,126 C150,74 236,64 276,92 C310,116 276,146 222,130"/>
+      <path class="try t2" d="M84,126 C160,158 232,188 302,184"/>
+      <line class="try tick" x1="300" y1="172" x2="304" y2="196"/>
+      <path class="try t3" d="M84,126 C132,96 164,158 214,124 C264,90 296,150 340,120"/>
+
+      <!-- 4. informed action (drawn last, sits above) -->
+      <path class="path" d="M84,126 C190,146 250,102 348,118 C468,140 556,96 656,104 C758,112 820,88 878,80"/>
+
+      <!-- 3. analysis: what held up, connected -->
+      <line class="link k1" x1="424" y1="112" x2="470" y2="96"/>
+      <line class="link k2" x1="470" y1="96"  x2="512" y2="122"/>
+      <line class="link k3" x1="512" y1="122" x2="424" y2="112"/>
+      <line class="link k4" x1="512" y1="122" x2="560" y2="104"/>
+
+      <!-- 2. evidence left behind by the attempts -->
+      <circle class="obs o1" cx="150" cy="96"  r="4.5"/>
+      <circle class="obs o2" cx="238" cy="72"  r="4.5"/>
+      <circle class="obs o3" cx="268" cy="110" r="4.5"/>
+      <circle class="obs o4" cx="168" cy="164" r="4.5"/>
+      <circle class="obs o5" cx="244" cy="183" r="4.5"/>
+      <circle class="obs keep o6" cx="214" cy="124" r="4.5" style="--gx:210px;--gy:-12px"/>
+      <circle class="obs keep o7" cx="288" cy="118" r="4.5" style="--gx:182px;--gy:-22px"/>
+      <circle class="obs keep o8" cx="340" cy="120" r="4.5" style="--gx:172px;--gy:2px"/>
+      <circle class="obs keep o9" cx="380" cy="112" r="4.5" style="--gx:180px;--gy:-8px"/>
+
+      <circle class="qpoint" cx="84" cy="126" r="6.5"/>
+      <circle class="outcome" cx="878" cy="80" r="7"/>
+
       <g>
-        <circle class="rec r1"  cx="88"  cy="146" r="5" style="--dx:-38px;--dy:32px"/>
-        <circle class="rec r2"  cx="120" cy="176" r="5" style="--dx:26px;--dy:-34px"/>
-        <circle class="rec r3"  cx="152" cy="132" r="5" style="--dx:-20px;--dy:40px"/>
-        <circle class="rec r4"  cx="326" cy="118" r="5" style="--dx:34px;--dy:38px"/>
-        <circle class="rec r5"  cx="358" cy="156" r="5" style="--dx:-28px;--dy:-36px"/>
-        <circle class="rec r6"  cx="392" cy="112" r="5" style="--dx:38px;--dy:30px"/>
-        <circle class="rec r7"  cx="356" cy="88"  r="5" style="--dx:-34px;--dy:34px"/>
-        <circle class="rec r8"  cx="574" cy="96"  r="5" style="--dx:30px;--dy:42px"/>
-        <circle class="rec r9"  cx="606" cy="134" r="5" style="--dx:-36px;--dy:-30px"/>
-        <circle class="rec r10" cx="640" cy="88"  r="5" style="--dx:32px;--dy:36px"/>
-        <circle class="rec r11" cx="604" cy="66"  r="5" style="--dx:-26px;--dy:38px"/>
-      </g>
-      <path class="path g3" d="M92,172 C230,196 250,150 356,158 S520,120 604,124 S770,92 852,66"/>
-      <circle class="outcome g4" cx="852" cy="66" r="7"/>
-      <g>
-        <text class="label g1" x="96"  y="212" text-anchor="start">Records</text>
-        <text class="label g1" x="358" y="212" text-anchor="middle">Relationships</text>
-        <text class="label g2" x="606" y="212" text-anchor="middle">Structure</text>
-        <text class="label g2" x="864" y="212" text-anchor="end">Outcome</text>
+        <text class="label g1" x="84"  y="222" text-anchor="start">Question</text>
+        <text class="label g2" x="320" y="222" text-anchor="middle">Evidence</text>
+        <text class="label g3" x="600" y="222" text-anchor="middle">Analysis</text>
+        <text class="label g4" x="890" y="222" text-anchor="end">Decision</text>
       </g>
     </svg>
     <div class="viz-labels" aria-hidden="true">
-      <span>Records</span><span>Relationships</span><span>Structure</span><span>Outcome</span>
+      <span>Question</span><span>Evidence</span><span>Analysis</span><span>Decision</span>
     </div>
-    <p class="cap">Fragmented records, then the relationships between them, then one path through to an outcome. That sequence is the job, whether the setting is research, data, or a business.</p>
+    <p class="cap">Trying is inevitable. The difference is whether each attempt produces evidence for the next decision.</p>
   </div>
 </section>
 
@@ -153,18 +155,18 @@
       <article class="card reveal reveal-d1">
         <p class="cat">Data systems</p>
         <p class="figure">300,000+</p>
-        <p class="figure-note">observations, assembled from dispersed public records</p>
+        <p class="figure-note">observations, from more than a decade of dispersed public records</p>
         <h3>Turning fragmented records into usable evidence</h3>
-        <p>For a $49,500 National Science Foundation project, I built the data infrastructure end to end — collection, reconciliation, validation — across more than a decade of inconsistent reporting.</p>
+        <p>For a National Science Foundation project, I built the data infrastructure end to end — collection, reconciliation, validation — across more than a decade of inconsistent reporting.</p>
         <p class="meta"><a href="/work/#data">View the project</a></p>
       </article>
 
       <article class="card reveal reveal-d2">
         <p class="cat">Entrepreneurship</p>
-        <p class="figure">$180,000</p>
-        <p class="figure-note">revenue in the first 15 months</p>
-        <h3>Building and growing a consumer business</h3>
-        <p>Growth strategy, digital marketing, pricing, and the repeated operational decisions required to build a coffee business with limited resources.</p>
+        <p class="figure">From launch to repeatable growth</p>
+        <p class="figure-note">a consumer business built under real constraints</p>
+        <h3>Building and operating a coffee business</h3>
+        <p>Helped build and operate a consumer coffee business, leading growth strategy, digital marketing, pricing, performance analysis, and recurring decisions under limited resources.</p>
         <p class="meta"><a href="/work/#business">Read the case study</a></p>
       </article>
 
@@ -181,6 +183,20 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Data consulting</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="measure reveal reveal-d1">
+      <p>I work with research teams and organizations on problems involving study design, complex or fragmented data, statistical modeling, causal inference, and the communication of quantitative findings.</p>
+      <p>My consulting work at Northwestern has reinforced a principle that also guides my research: the most sophisticated method is useful only when it answers the actual decision in front of the client.</p>
+      <p class="meta"><a href="mailto:ubeydullahademi2027@u.northwestern.edu?subject=Data%20project">Discuss a project</a></p>
+    </div>
+  </div>
+</section>
+
 <section class="section dark">
   <div class="wrap">
     <div class="reveal">
@@ -191,6 +207,19 @@
     <div class="measure reveal reveal-d1">
       <p>My current research develops causal methods for settings in which policies reshape evolving networks. The broader aim is to make credible evaluation possible when interventions, relationships, and behavior change together over time.</p>
       <p class="meta"><a href="/research/">Read about my research</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Emerging focus</p>
+      <h2>Human judgment in AI-mediated systems</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="measure reveal reveal-d1">
+      <p>I am increasingly interested in how people delegate judgment to AI: when AI complements expertise, when it encourages overreliance, and how repeated human&ndash;AI interaction reshapes trust, behavior, and institutions.</p>
     </div>
   </div>
 </section>
