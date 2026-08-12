@@ -77,12 +77,14 @@ strong{color:var(--ink);font-weight:600}
 .hero h1{margin-bottom:1.1rem}
 
 .hero-portrait{
-  width:100%;max-width:200px;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
-  border-radius:3px;margin-left:auto;border:1px solid var(--rule);filter:saturate(.92);
+  width:100%;max-width:210px;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;
+  border-radius:20px;margin-left:auto;border:0;filter:saturate(.94);
+  box-shadow:0 12px 30px rgba(24,35,52,.11), 0 2px 6px rgba(24,35,52,.05);
 }
 .about-portrait{
   width:100%;max-width:300px;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;
-  border-radius:3px;margin-left:auto;border:1px solid var(--rule);filter:saturate(.92);
+  border-radius:20px;margin-left:auto;border:0;filter:saturate(.94);
+  box-shadow:0 12px 30px rgba(24,35,52,.11), 0 2px 6px rgba(24,35,52,.05);
 }
 
 .btn-row{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem}
