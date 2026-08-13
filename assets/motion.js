@@ -55,4 +55,12 @@
   document.querySelectorAll('.viz .try, .viz .link').forEach(function (p) {
     try { p.style.setProperty('--len', p.getTotalLength().toFixed(1)); } catch (e) {}
   });
+
+  // Stripe: stop moving while the tab is in the background.
+  var stripe = document.getElementById('stripe');
+  if (stripe) {
+    document.addEventListener('visibilitychange', function () {
+      stripe.classList.toggle('paused', document.hidden);
+    });
+  }
 })();
